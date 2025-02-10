@@ -66,7 +66,7 @@ function ChooseBar() {
     </div>
      <div className='flex justify-start  mt-auto flex-col gap-1  '>
 
-<span className='text-sm italic text-blue-400'>Upload Image to use in grid (will be public)</span>
+<span className='text-sm italic text-blue-200'>Upload Image to use in grid (will be public)</span>
       <form onSubmit={handleSendImage} className='flex '>
       <Input
         type="file"

@@ -15,6 +15,11 @@ export default function Home() {
 
    <Grid/>
       <SaveButton/> 
+      <span className="text-sm italic text-blue-200">
+        build a aesthetic grid card --
+        press Save --
+        share link 
+      </span>
      </div>
    <div className="md:w-[30%] w-full h-[50%] md:h-full  border-l-[2px] border-white">
     <ChooseBar/>
