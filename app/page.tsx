@@ -1,4 +1,5 @@
 
+import { Suspense } from "react";
 import ChooseBar from "./components/ChooseBar";
 import Grid from "./components/Grid";
 import SaveButton from "./components/SaveButton";
@@ -14,7 +15,10 @@ export default function Home() {
      <div className="md:w-[70%] w-full flex md:flex-col md:gap-6 md:h-full h-[50%] justify-center md:items-center pt-5 md:pt-0 items-start ">
 
    <Grid/>
+   <Suspense>
+
       <SaveButton/> 
+   </Suspense>
       <span className="text-sm italic text-blue-200">
         build a aesthetic grid card --
         press Save --
