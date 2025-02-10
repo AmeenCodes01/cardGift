@@ -24,14 +24,14 @@ function Grid() {
       }
   return (
     <div className="justify-center  h-fit 
-    grid grid-cols-6   bg-green-950 w-fit 
+    grid grid-cols-5   bg-green-950 w-fit 
     "
     //     bg-[url('/bg_grass.jpg')] bg-cover bg-center 
 
 >
 {
   arr.map((url, index)=>(
-    <div className='  md:h-[80px] md:w-[80px] w-[30px] h-[30px] flex   border-[0.1px] rounded-sm justify-center items-center'
+    <div className='  md:h-[80px] md:w-[80px] w-[50px] h-[50px] flex border-yellow-600   border-[0.01px] border-opacity-40  rounded-sm justify-center items-center'
     key={index}
     onDrop={(e)=>handleDrop(e, index)}
     onDragOver={e => e.preventDefault()}

@@ -41,3 +41,11 @@ export const store = mutation({
     },
   });
 
+  export const del = mutation({
+    args: {
+      storageId: v.id("_storage"),
+    },
+    handler: async (ctx, args) => {
+      return await ctx.storage.delete(args.storageId);
+    },
+  });

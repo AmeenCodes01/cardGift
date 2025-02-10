@@ -1,5 +1,7 @@
 "use client"
 
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 import { api } from '@/convex/_generated/api'
 import { Id } from '@/convex/_generated/dataModel'
 import { Flowers, flowers } from '@/flowers'
@@ -42,38 +44,49 @@ function ChooseBar() {
       imageInput.current!.value = "";
     }
     return (
-    <div className='grid grid-cols-3 gap-3'>
+      <div className='flex flex-col  h-full w-full  justify-start items-centre pl-2 gap-4 p-4 '>
+
+    <div className='grid grid-cols-4 gap-4  overflow-y-auto   md:h-fit w-full  ' >
      {
         urls?.map((img,i)=>(
-             <Image
-             key={i}
-                    src={ img.url as string}
-                    alt="flower pic"
-                    className="  border-white bg-transparent border-[1px] max-w-[100px] max-h-[100px]
-                "
-                    width={60}
-                    height={60}
-                    draggable
-                    onDragStart={()=> {dragImg(img.url)}}
-                  />
+          <Image
+          key={i}
+                 src={ img.url as string}
+                 alt="flower pic"
+                        className="  bg-transparent object-cover rounded-sm aspect-square
+    "
+                 width={60}
+                 height={60}
+                 draggable
+                 onDragStart={()=> {dragImg(img.url)}}
+               />
+
         ))
      } 
-      {/* <form onSubmit={handleSendImage}>
-      <input
+    </div>
+     <div className='flex justify-start  mt-auto flex-col gap-1  '>
+
+<span className='text-sm italic text-blue-400'>Upload Image to use in grid (will be public)</span>
+      <form onSubmit={handleSendImage} className='flex '>
+      <Input
         type="file"
         accept="image/*"
         ref={imageInput}
+        className='text-white border-2'
+        color='white'
         onChange={(event) => setSelectedImage(event.target.files![0])}
         disabled={selectedImage !== null}
-      />
-      <button
+        />
+      <Button
         type="submit"
+        variant={"ghost"}
         value="Send Image"
         disabled={selectedImage === null}
-        className='text-white border-2 w-[100px]'
-      >Upload</button>
-    </form> */}
-    </div>
+        className=' border-white text-white'
+        >Upload</Button>
+    </form>
+        </div>
+      </div>
   )
 }
 

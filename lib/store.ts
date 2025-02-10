@@ -17,7 +17,7 @@ export const useStore = create<State & Actions>()(
   persist(
     (set) => ({
       draggedUrl: null,
-      arrangement: new Array(36).fill(null),
+      arrangement: new Array(25).fill(null),
       dragImg: (url:string | null) => set({ draggedUrl: url }),
       addImg: (url:string| null, arr_index: number) =>
         set((state) => ({
