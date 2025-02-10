@@ -9,7 +9,7 @@ export type State = {
 
 export type Actions = {
   dragImg: (url: string | null) => void;
-  addImg: (url: string, arr_index: number) => void;
+  addImg: (url: string| null, arr_index: number) => void;
   initArr: (arr:string[])=> void
 };
 
@@ -17,9 +17,9 @@ export const useStore = create<State & Actions>()(
   persist(
     (set) => ({
       draggedUrl: null,
-      arrangement: new Array(20).fill(null),
+      arrangement: new Array(36).fill(null),
       dragImg: (url:string | null) => set({ draggedUrl: url }),
-      addImg: (url:string, arr_index: number) =>
+      addImg: (url:string| null, arr_index: number) =>
         set((state) => ({
           arrangement: state.arrangement.map((_, i) =>
             i === arr_index ? url : _

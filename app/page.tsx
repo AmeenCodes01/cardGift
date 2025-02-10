@@ -7,16 +7,16 @@ export default function Home() {
 
 
   return (
-    <div className=" w-full h-screen  flex  justify-center items-center bg-black  ">
+    <div className=" w-full h-[100%]  flex flex-col-reverse md:flex-row  justify-center items-center bg-black  ">
       <div className="">
 
       <SaveButton/> 
       </div>
-     <div className="w-[70%] flex h-full justify-center items-center">
+     <div className="md:w-[70%] w-full flex h-full justify-center md:items-center pt-5 md:pt-0 items-start border-2">
 
    <Grid/>
      </div>
-   <div className="w-[30%] h-full border-l-2">
+   <div className="md:w-[30%] w-full  border-2">
     <ChooseBar/>
    </div>
     </div>

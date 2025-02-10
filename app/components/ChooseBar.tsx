@@ -58,7 +58,7 @@ function ChooseBar() {
                   />
         ))
      } 
-      <form onSubmit={handleSendImage}>
+      {/* <form onSubmit={handleSendImage}>
       <input
         type="file"
         accept="image/*"
@@ -72,7 +72,7 @@ function ChooseBar() {
         disabled={selectedImage === null}
         className='text-white border-2 w-[100px]'
       >Upload</button>
-    </form>
+    </form> */}
     </div>
   )
 }
