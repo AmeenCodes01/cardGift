@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'dapper-trout-985.convex.cloud',
+        hostname: 'standing-seal-632.convex.cloud',
   port: '',
         pathname: '/api/storage/**',
         search: '',

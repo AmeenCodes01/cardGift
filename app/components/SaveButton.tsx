@@ -61,7 +61,11 @@ const get=  id !== null ? useQuery(api.order.get,{id: id as Id<"Order">}) : null
   return (
     <div>
       
-      <Button onClick={onSave} variant={"outline"} className="p-4 ">Save</Button>
+      <Button onClick={onSave} variant={"default"} className="p-2 md:p-4 bg-slate-500">
+        <span className="text-sm md:text-md">
+          Save
+          </span>
+        </Button>
 
      
 

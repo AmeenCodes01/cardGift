@@ -45,8 +45,7 @@ function ChooseBar() {
     }
     return (
       <div className='flex flex-col  h-full w-full  justify-start items-centre pl-2 gap-4 p-4 '>
-
-    <div className='grid grid-cols-4 gap-4  overflow-y-auto   md:h-fit w-full  ' >
+    <div className='grid grid-cols-4 gap-4  overflow-y-auto   md:h-fit w-full   ' >
      {
         urls?.map((img,i)=>(
           <Image
@@ -68,15 +67,18 @@ function ChooseBar() {
 
 <span className='text-sm italic text-blue-200'>Upload Image to use in grid (will be public)</span>
       <form onSubmit={handleSendImage} className='flex '>
+      <Button className="cursor-pointer bg-slate-900">
+      Choose File
       <Input
         type="file"
         accept="image/*"
         ref={imageInput}
-        className='text-white border-2'
-        color='white'
+        className='hidden'
+        // className='text-white bg-slate-300  border-[2px] w-[200px] placeholder:text-white'
         onChange={(event) => setSelectedImage(event.target.files![0])}
         disabled={selectedImage !== null}
         />
+        </Button>
       <Button
         type="submit"
         variant={"ghost"}
