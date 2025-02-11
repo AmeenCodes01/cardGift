@@ -10,8 +10,11 @@ export const create = mutation({
 });
 
 export const get =  query({
-  args: { id: v.id("Order") },
+  args: { id: v.union(v.id("Order"),v.null()) },
   handler: async (ctx, args) => {
+    if(args.id==null){
+      return null
+    }
     const order = await ctx.db.get(args.id)
 
     return order

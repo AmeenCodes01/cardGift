@@ -1,20 +1,17 @@
 "use client"
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Img from './Img'
 import { useStore } from '@/lib/store'
+
 
 function Grid() {
     const arr = useStore(state => state.arrangement)
     const draggedUrl = useStore(state=> state.draggedUrl)
     const dragImg = useStore(state=> state.dragImg)
     const addImg = useStore(state=> state.addImg)
+    const [count,setCount]=useState(0)
 
-
-    useEffect(() => {
-      useStore.persist.rehydrate()
-    }, [])
-
-
+    
 
     const handleDrop = (e: React.DragEvent<HTMLDivElement>,i:number) => {
         if (draggedUrl === null) return
@@ -22,6 +19,7 @@ function Grid() {
         addImg(draggedUrl,i )
         dragImg(null)
       }
+     
   return (
     <div className="justify-center  h-fit 
     grid grid-cols-5   bg-green-950 w-fit 
